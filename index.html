@@ -61,8 +61,8 @@ version = "0.0.1"</code></pre></section><section id="adding-the-publication"><h2
 }</code></pre></section><section id="publication-result"><h2>Publication result</h2><div class="ulist"><ul><li><p>The <em>artifacts</em> of the selected component</p><div class="ulist"><ul><li><p>Usually the JAR file for a Java project</p></li></ul></div></li><li><p>The <em>metadata</em> of the selected component</p><div class="ulist"><ul><li><p>Maven or Ivy depending on the repository type</p></li><li><p>Gradle Module Metadata by default starting with Gradle 6.0</p></li></ul></div></li><li><p>Extra files</p><div class="ulist"><ul><li><p>Checksums: MD5, SHA1, SHA256, SHA512 (last two with Gradle 6.0)</p></li><li><p>Signatures if signing configured</p></li></ul></div></li></ul></div></section></section>
 <section><section id="publishing-additional-artifacts" data-background-color="#01303a"><h2>Publishing additional artifacts</h2></section><section id="use-cases"><h2>Use cases</h2><div class="ulist"><ul><li><p>Publication of javadoc and sources JARs</p></li><li><p>Your project defines additional archives</p><div class="ulist"><ul><li><p>Test fixtures</p></li><li><p>Optional features</p></li></ul></div></li></ul></div>
 <div class="paragraph"><p>In all the cases above, we want to publish not only the <em>added artifact</em> but also its relevant <em>metadata</em>.</p></div></section><section id="extra-artifacts-demo" data-background-color="#01303a"><h2>Extra artifacts demo</h2></section><section id="publishing-javadoc-and-sources"><h2>Publishing javadoc and sources</h2><pre class="highlight listingblock"><code data-noescape="" class="kotlin language-kotlin">java {
-    publishJavadoc()
-    publishSources()
+    withJavadocJar()
+    withSourcesJar()
 }</code></pre>
 <div class="ulist"><ul><li><p>Produces <em>and</em> attaches the JAR to the publication &#8230;&#8203;</p></li><li><p>As variants, with the right <em>variant attributes</em></p></li></ul></div></section><section id="using-test-fixtures"><h2>Using test fixtures</h2><pre class="highlight listingblock"><code data-noescape="" class="kotlin language-kotlin">plugins {
     `java-test-fixtures`
