@@ -8,8 +8,8 @@ group = "org.test"
 version = "0.0.3"
 
 java {
-    publishJavadoc()
-    publishSources()
+    withJavadocJar()
+    withSourcesJar()
 }
 
 repositories {

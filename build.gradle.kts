@@ -3,7 +3,7 @@ plugins {
 }
 
 presentation {
-    githubUserName.set("melix")
+    githubUserName.set("gradle")
 }
 
 dependencies {
